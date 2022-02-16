@@ -9,7 +9,6 @@ export const GlobalStyle = createGlobalStyle`
   }
   
   html{
-    background: ${colors.mainDark};
 
     @media (max-width: 1080px) {
       font-size: 93.75%; //15px
@@ -19,8 +18,12 @@ export const GlobalStyle = createGlobalStyle`
     }
   }
 
-  body {
+  #root {
+    background: ${colors.mainDark};
     min-height: 100vh;
+  }
+
+  body { 
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }

@@ -9,17 +9,16 @@ import {
   DrawerOverlay,
   Image,
   Stack,
-  Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import React from "react";
 import { useRef } from "react";
 import { FaHamburger } from "react-icons/fa";
 import styled from "styled-components";
 import LogoBlueteco from "../../assets/images/logo-dark.png";
 import { MENUITEMS } from "../../constants";
 import { colors } from "../../resources/colors";
-import { fonts } from "../../resources/fonts";
-import { SideNavItem } from "./SideNavItem";
+import { MemoizedSideNavItem } from "./SideNavItem";
 
 interface SideNavProps {
   activePath: string;
@@ -49,7 +48,7 @@ const SideNav: React.FC<SideNavProps> = ({ activePath }) => {
           <DrawerBody>
             <Stack spacing={3}>
               {MENUITEMS.map((item, index) => (
-                <SideNavItem
+                <MemoizedSideNavItem
                   key={index}
                   icon={item.icon}
                   name={item.name}
@@ -93,4 +92,4 @@ const StyledDrawerContent = styled(DrawerContent)`
   background: ${colors.mainDark} !important;
 `;
 
-export { SideNav };
+export const MemoizedSideNav = React.memo(SideNav);

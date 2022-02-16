@@ -1,14 +1,16 @@
 import { Box } from "@chakra-ui/react";
-import { Header } from "../components/Header";
-import { SectionTitle } from "../components/SectionTitle";
+import { CardMenu } from "../components/CardMenu";
+import { MemoizedHeader } from "../components/Header";
+import { MemoizedSectionTitle } from "../components/SectionTitle";
 import { PATHS } from "../constants";
 
 const Home: React.FC = () => {
   return (
     <>
-      <Header activePath={PATHS.HOME} />
-      <Box>
-        <SectionTitle />
+      <MemoizedHeader activePath={PATHS.HOME} />
+      <Box as="section" w="100%" pb="2rem">
+        <MemoizedSectionTitle title="Início" />
+        <CardMenu />
       </Box>
     </>
   );

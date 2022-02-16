@@ -13,7 +13,7 @@ const PATHS = {
 
 const MENUITEMS: Route[] = [
   {
-    name: "Home",
+    name: "Início",
     path: PATHS.HOME,
     icon: TiHome,
   },
@@ -23,12 +23,12 @@ const MENUITEMS: Route[] = [
     icon: MdRestaurantMenu,
   },
   {
-    name: "Tables",
+    name: "Mesas",
     path: PATHS.TABLES,
     icon: SiAirtable,
   },
   {
-    name: "Users",
+    name: "Usuários",
     path: PATHS.USERS,
     icon: FaUsersCog,
   },

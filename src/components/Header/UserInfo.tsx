@@ -1,4 +1,5 @@
 import { Avatar, HStack, Text } from "@chakra-ui/react";
+import React from "react";
 
 const UserInfo: React.FC = () => {
   return (
@@ -9,4 +10,4 @@ const UserInfo: React.FC = () => {
   );
 };
 
-export { UserInfo };
+export const MemoizedUserInfo = React.memo(UserInfo);

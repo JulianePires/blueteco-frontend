@@ -1,16 +1,10 @@
-import {
-  Avatar,
-  HStack,
-  Image,
-  Stack,
-  Text,
-  useMediaQuery,
-} from "@chakra-ui/react";
+import { HStack, Image, Stack, useMediaQuery } from "@chakra-ui/react";
+import React from "react";
 import styled from "styled-components";
 import LogoBlue from "../../assets/images/logo-dark.png";
 import { colors } from "../../resources/colors";
-import { SideNav } from "../SideNav";
-import { UserInfo } from "./UserInfo";
+import { MemoizedSideNav } from "../SideNav";
+import { MemoizedUserInfo } from "./UserInfo";
 
 interface HeaderProps {
   activePath: string;
@@ -22,8 +16,8 @@ const Header: React.FC<HeaderProps> = ({ activePath }) => {
     <HeaderContainer spacing="auto">
       <StyledLogo src={LogoBlue} />
       <Stack as="section" direction={["column", "column", "row"]} spacing={5}>
-        {isLargerThan768 && <UserInfo />}
-        <SideNav activePath={activePath} />
+        {isLargerThan768 && <MemoizedUserInfo />}
+        <MemoizedSideNav activePath={activePath} />
       </Stack>
     </HeaderContainer>
   );
@@ -39,4 +33,4 @@ const StyledLogo = styled(Image)`
   width: 10em;
 `;
 
-export { Header };
+export const MemoizedHeader = React.memo(Header);

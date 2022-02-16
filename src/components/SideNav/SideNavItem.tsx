@@ -1,4 +1,5 @@
 import { Icon, Stack } from "@chakra-ui/react";
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { colors } from "../../resources/colors";
@@ -33,16 +34,37 @@ const MenuItem = styled(Stack)<{ isActivePath: string }>`
   a {
     font-size: 1.2em;
     color: ${(props) =>
-      props.isActivePath === "true" ? colors.white : colors.secondaryLight};
-    transition: color 0.2s ease-out;
-    border-bottom: ${(props) =>
-      props.isActivePath === "true" ? "2px solid" + colors.secondary : "none"};
+      props.isActivePath === "true" ? colors.white : colors.secondaryLighter};
+    border-radius: 4px;
+
+    transition: all 0.5s ease-out;
+
+    position: relative;
 
     &:hover {
-      color: ${colors.secondary};
+      color: ${colors.secondaryLight};
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: ${colors.secondary};
+      bottom: -4px;
+      left: 0;
+      transform-origin: right;
+      transform: ${(props) =>
+        props.isActivePath === "true" ? "scaleX(1)" : "scaleX(0)"};
+      transition: transform 0.3s ease-in-out;
+    }
+
+    &:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
     }
   }
 `;
 
-export { SideNavItem };
-
+export const MemoizedSideNavItem = React.memo(SideNavItem);
