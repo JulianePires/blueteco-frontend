@@ -1,6 +1,5 @@
 import { authenticate } from "../api/functions";
 import { LoginRequest } from "../api/schemas/requests/Login";
-import { LoginResponse } from "../api/schemas/responses/Login";
 import * as storage from "../storage";
 import { IAuthentication } from "./IAuthentication";
 

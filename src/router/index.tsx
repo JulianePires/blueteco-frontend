@@ -6,6 +6,7 @@ import PUBLICROUTES from "./publicRoutes";
 export const Router: React.FC = () => {
   const context = useAuth();
   const ROUTES = context.signed ? PRIVATEROUTES : PUBLICROUTES;
+
   return (
     <BrowserRouter>
       <Routes>
