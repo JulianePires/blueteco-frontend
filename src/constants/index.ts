@@ -9,6 +9,8 @@ const PATHS = {
   MENU: "/menu",
   TABLES: "/tables",
   USERS: "/users",
+  LOGIN: "/",
+  CREATE: "/create",
 };
 
 const MENUITEMS: Route[] = [

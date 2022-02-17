@@ -1,10 +1,10 @@
 import { PATHS } from "../constants";
 import Home from "../pages/Home";
 import Menu from "../pages/Menu";
-import Table from "../pages/Tables";
+import Tables from "../pages/Tables";
 import Users from "../pages/Users";
 
-const ROUTES = [
+const PRIVATEROUTES = [
   {
     path: PATHS.HOME,
     element: Home,
@@ -15,7 +15,7 @@ const ROUTES = [
   },
   {
     path: PATHS.TABLES,
-    element: Table,
+    element: Tables,
   },
   {
     path: PATHS.USERS,
@@ -23,4 +23,4 @@ const ROUTES = [
   },
 ];
 
-export { ROUTES };
+export default PRIVATEROUTES;
