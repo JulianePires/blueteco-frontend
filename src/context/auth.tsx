@@ -1,6 +1,7 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { LoginRequest } from "../infrastructure/api/schemas/requests/Login";
 import { Authentication } from "../infrastructure/auth";
+import { getSessionData } from "../infrastructure/storage";
 import { User } from "../types";
 
 interface AuthContextProps {
@@ -29,6 +30,15 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     await autenticator.logout();
     setUser(null);
   }
+
+  const storageData = getSessionData();
+
+  useEffect(() => {
+    if (storageData) {
+      setUser(JSON.parse(storageData.user!));
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <AuthContext.Provider

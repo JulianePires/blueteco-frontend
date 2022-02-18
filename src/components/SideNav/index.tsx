@@ -17,7 +17,9 @@ import { FaHamburger } from "react-icons/fa";
 import styled from "styled-components";
 import LogoBlueteco from "../../assets/images/logo-dark.png";
 import { MENUITEMS } from "../../constants";
+import useAuth from "../../context/auth";
 import { colors } from "../../resources/colors";
+import { MemoizedButton } from "../Button";
 import { MemoizedSideNavItem } from "./SideNavItem";
 
 interface SideNavProps {
@@ -27,6 +29,7 @@ interface SideNavProps {
 const SideNav: React.FC<SideNavProps> = ({ activePath }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = useRef<HTMLButtonElement>(null);
+  const { Logout } = useAuth();
 
   return (
     <>
@@ -56,6 +59,7 @@ const SideNav: React.FC<SideNavProps> = ({ activePath }) => {
                   isActivePath={activePath === item.path}
                 />
               ))}
+              <MemoizedButton onClick={Logout}>Logout</MemoizedButton>
             </Stack>
           </DrawerBody>
 

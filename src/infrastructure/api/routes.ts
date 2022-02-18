@@ -7,6 +7,7 @@ const routes: Object<string> = {
   MENUID: "/menu/:id",
   TABLE: "/table",
   TABLEID: "/table/:id",
+  TABLENUMBER: "/table/:number",
   TABLEPARTIAL: "/table/partial/:id",
   TABLEOPEN: "/table/open/:id",
   TABLECLOSE: "/table/close/:id",

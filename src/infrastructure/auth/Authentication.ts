@@ -16,7 +16,7 @@ export class Authentication implements IAuthentication {
     storage.deleteSessionData();
   }
 
-  async getTokenData() {
+  getTokenData() {
     try {
       const sessionData = storage.getSessionData();
       const accessToken = sessionData.token;

@@ -12,10 +12,16 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ activePath }) => {
   const [isLargerThan768] = useMediaQuery("(min-width: 768px)");
+
   return (
     <HeaderContainer spacing="auto">
       <StyledLogo src={LogoBlue} />
-      <Stack as="section" direction={["column", "column", "row"]} spacing={5}>
+      <Stack
+        alignItems="center"
+        as="section"
+        direction={["column", "column", "row"]}
+        spacing={5}
+      >
         {isLargerThan768 && <MemoizedUserInfo />}
         <MemoizedSideNav activePath={activePath} />
       </Stack>

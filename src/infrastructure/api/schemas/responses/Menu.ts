@@ -1,8 +1,8 @@
 import { Menu } from "../../../../types";
 
-export type MenusReturn = Menu[];
+export type MenusResponse = Menu[];
 
-export interface MenuReturn {
+export interface MenuResponse {
   menu: Menu;
   message: string;
 }

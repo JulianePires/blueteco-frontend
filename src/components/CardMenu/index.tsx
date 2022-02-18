@@ -1,5 +1,4 @@
 import { Stack } from "@chakra-ui/react";
-import styled from "styled-components";
 import { MENUITEMS } from "../../constants";
 import { MemoizedCard } from "./Card";
 
@@ -26,6 +25,7 @@ const CardMenu: React.FC = () => {
   );
 };
 
-const StyledStack = styled(Stack)``;
+// const StyledStack = styled(Stack)``;
 
 export { CardMenu };
+
